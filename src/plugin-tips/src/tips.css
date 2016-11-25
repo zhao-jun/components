@@ -1,0 +1,63 @@
+.tip-container {
+    position: absolute;
+    z-index: 999999;
+    box-shadow: 2px 2px 5px #666;
+    border: 1px solid #000;
+    border-radius: 6px;
+    display: none;
+}
+
+.tip-point-top, .tip-point-bottom {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    left: 50%;
+    margin-left: -6px;
+}
+.tip-point-top{
+    border-top-color: #000;
+    top:100%;
+}
+.tip-point-bottom {
+    border-bottom-color: #000;
+    top:-12px;
+}
+.tip-point-top:after,.tip-point-bottom:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    left:-5px;
+}
+.tip-point-top:after {
+    border-top-color:#fff;
+    top:-6px;
+}
+.tip-point-bottom:after {
+    border-bottom-color:#fff;
+    top:-4px;
+}
+.tip-content {
+
+    padding: 5px 10px;
+
+    color: #333;
+    /*font-size: 12px;*/
+    /*line-height: 1.5;*/
+    /*font-family: "Microsoft YaHei";*/
+    font:bold 12px/1.5 "Microsoft YaHei";
+}
+/*.tip-content::before {*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*padding: .35em;*/
+    /*top: -.4em;*/
+    /*background:inherit;*/
+    /*left:50%;*/
+    /*border: inherit;*/
+    /*border-right: 0;*/
+    /*border-bottom: 0;*/
+    /*transform: rotate(45deg);*/
+/*}*/
