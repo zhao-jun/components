@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="always" name="referrer">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>数字滚动特效</title>
+    <link rel="stylesheet" href="css/num-roll.css">
+</head>
+<body>
+    <!-- 触发方式两种 -->
+    <!--
+        一种是(需要该元素赋值 data-num="9999")：
+        numRoll("#num-roll");
+        另一种是：
+        numRoll("#num-roll","7777");
+    -->
+    <div class="contaier">
+        <span id="num-roll" class="num-roll" data-num="9999"></span>
+    </div>
+
+    <script src="js/num-roll.js"></script>
+    <script>
+        var numRollOne = new numRoll('#num-roll');
+    </script>
+</body>
+</html>
