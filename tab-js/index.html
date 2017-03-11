@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="always" name="referrer">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>选项卡-js</title>
+    <link rel="stylesheet" href="css/tab.css">
+</head>
+<body>
+    <div class="container">
+        <p>选项卡-js</p>
+        <div id="tabContent">
+            <ul class="nav-tabs">
+                <li class="active"><a href="#tab1" alt="tab1" data-slide-to="0">tab1</a></li>
+                <li><a href="#tab2" alt="tab2" data-slide-to="1">tab2</a></li>
+                <li><a href="#tab3" alt="tab3" data-slide-to="2">tab3</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab1" class="tab-pane active">
+                    <p>tab1-content</p>
+                </div>
+                <div id="tab2" class="tab-pane">
+                    <p>tab2-content</p>
+                </div>
+                <div id="tab3" class="tab-pane">
+                    <p>tab3-content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tab.js"></script>
+    <script>
+        // 设置navtab初始化
+        var tabContent=new navTab({
+            id : '#tabContent',
+            //轮播间隔
+            time:3000,
+            //是否自动播放
+            isAuto:true
+        });
+    </script>
+</body>
+</html>
