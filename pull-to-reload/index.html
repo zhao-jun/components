@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pull-to-reload</title>
+    <style>
+        html,body {
+            margin:0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/pill-to-reload.js"></script>
+    <script>
+        var ptr;
+        document.addEventListener('DOMContentLoaded',function () {
+            ptr = new PullToReload({
+                'callback-loading': function() {
+                    setTimeout(function () {
+                        ptr.loadingEnd();
+                    }, 3000);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="ptr">
+        ...
+    </div>
+    <div id="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda delectus dicta, facilis illum ipsum officia pariatur porro suscipit velit!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos eum incidunt nesciunt nostrum omnis optio quas veritatis vitae voluptate.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dicta ex fugiat illo libero nisi odit pariatur reprehenderit, sapiente soluta.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor, ducimus enim fugit itaque quas quia rerum voluptas voluptate voluptatem.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae distinctio dolorem, eaque eos fugiat incidunt ipsa non ullam vero voluptas!</p>
+    </div>
+</body>
+</html>
