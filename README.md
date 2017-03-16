@@ -6,3 +6,4 @@
 4. 向上按钮 --> gotop 
 5. 下拉更新 --> pull-to-reload
 6. 加载条动画 --> lading-bar 
+7. 轮播图 --> carousel-css3

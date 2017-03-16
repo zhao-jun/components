@@ -1,0 +1,107 @@
+html,body,ol {
+    margin:0;
+    padding:0;
+}
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.carousel {
+    width: 300px;
+    margin:0 auto;
+    .carousel-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .carousel-open:checked + .carousel-item {
+        position: static;
+        opacity: 1;
+        -webkit-transition: opacity 0.6s ease-out;
+        transition: opacity 0.6s ease-out;
+    }
+
+    .carousel-item {
+        position: absolute;
+        opacity: 0;
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+    }
+
+    .carousel-control {
+        position: absolute;
+        top:50%;
+        -webkit-transform: translate(0,-50%);
+        -moz-transform: translate(0,-50%);
+        -ms-transform: translate(0,-50%);
+        -o-transform: translate(0,-50%);
+        transform: translate(0,-50%);
+        background: rgba(0,0,0,.28);
+        border-radius:50%;
+        color: #fff;
+        cursor: pointer;
+        font-size: 40px;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height:34px;
+        display: none;
+    }
+    .carousel-control.prev {
+        left: 2%;
+    }
+    .carousel-control.next {
+        right: 2%;
+    }
+    .carousel-control:hover {
+        background: rgba(0, 0, 0, 0.8);
+        color: #aaa;
+    }
+
+    //important
+    #carousel-1:checked ~ .control-1,
+    #carousel-2:checked ~ .control-2,
+    #carousel-3:checked ~ .control-3,
+    #carousel-4:checked ~ .control-4,
+    #carousel-5:checked ~ .control-5 {
+        display: block;
+    }
+
+    .carousel-indicators {
+        list-style:none;
+        position: absolute;
+        bottom:2%;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .carousel-indicators li {
+        display: inline-block;
+        margin:0 5px;
+    }
+    .carousel-bullet {
+        color:#fff;
+        cursor: pointer;
+        display: block;
+        font-size: 35px;
+    }
+    .carousel-bullet:hover {
+        color: #aaa;
+    }
+
+    #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+    #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+    #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet,
+    #carousel-4:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet,
+    #carousel-5:checked ~ .control-5 ~ .carousel-indicators li:nth-child(5) .carousel-bullet {
+        color: #22ba88;
+    }
+}
+
