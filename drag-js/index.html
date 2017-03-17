@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>drag</title>
+    <style>
+        html,body {
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="target"></div>
+    <div id="targetTwo"></div>
+    <script src="js/drag.js"></script>
+    <script>
+        new Drag({
+            id:'target',
+            width:'50px',
+            height:'50px',
+            backgroundColor:'#6861ff'
+        });
+        new Drag({
+            id:'targetTwo',
+            backgroundColor:'#64e6ff'
+        });
+    </script>
+</body>
+</html>
