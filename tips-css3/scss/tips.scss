@@ -1,0 +1,133 @@
+html,body {
+    margin:0;
+    padding:0;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2rem 0;
+    width: 100vw;
+    height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+/*.row {
+    display: flex;
+    margin: auto;
+}*/
+
+/* COLORS */
+$white: #ffffff;
+$gray-light: #cdd2d6;
+$black: #000000;
+$blue: #05a8ff;
+$orange: #ff7033;
+$red: #f7404f;
+$green: #49c562;
+$shadow: rgba(205,210,214,.8);
+
+/* BUTTONS */
+.btn {
+    box-sizing: border-box;
+    background-color: $white;
+    border: 1px solid $gray-light;
+    color: $black;
+    height: 45px;
+    letter-spacing: 2px;
+    padding: .8em 1em;
+    transition: all .3s ease;
+
+    &:hover {
+        background-color: $blue;
+        border-color: $blue;
+        color: $white;
+    }
+}
+
+/* TIP */
+.tip {
+    position: relative;
+    &:hover {
+        .tip-content {
+            opacity: 1;
+        }
+    }
+    .tip-content {
+        position: absolute;
+        box-sizing: border-box;
+        background-color: $blue;
+        //box-shadow: 0 5px 25px 5px $shadow;
+        color: $white;
+        font-size: 12px;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        max-width: 200px;
+        min-width: 145px;
+        padding: 1em;
+        opacity: 0;
+        transition: all .3s ease;
+        z-index: 100;
+        &:after {
+            background: $blue;
+            content: "";
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            transform: rotate(45deg);
+        }
+    }
+
+    &.top {
+        .tip-content {
+            bottom: calc(100% + 1.5em);
+            left: 50%;
+            transform: translateX(-50%);
+            &::after {
+                bottom: -5px;
+                left: 50%;
+                margin-left: -5px;
+            }
+        }
+    }
+    &.right {
+        .tip-content {
+            left: calc(100% + 1.5em);
+            top: 50%;
+            transform: translateY(-50%);
+            &::after {
+                left: -5px;
+                top: 50%;
+                margin-top: -5px;
+            }
+        }
+    }
+    &.bottom {
+        .tip-content {
+            top: calc(100% + 1.5em);
+            left: 50%;
+            transform: translateX(-50%);
+            &::after {
+                top: -5px;
+                left: 50%;
+                margin-left: -5px;
+            }
+        }
+    }
+    &.left {
+        .tip-content {
+            right: calc(100% + 1.5em);
+            top: 50%;
+            transform: translateY(-50%);
+            &::after {
+                right: -5px;
+                top: 50%;
+                margin-top: -5px;
+            }
+        }
+    }
+}
