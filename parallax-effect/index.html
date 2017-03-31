@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视差效果</title>
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .avatar {
+/*            position: absolute;
+            left:0;
+            right: 0;
+            top:0;
+            bottom: 0;*/
+            width: 300px;
+            height: 300px;
+            background: url("./avator.jpg");
+            -webkit-background-size:cover;
+            background-size:cover;
+            transition: all .3s linear;
+            border:30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="avatar"></div>
+    <script>
+        (function (doc, win) {
+            var Parallax = function (opt) {
+                this.ele = doc.querySelector('.avatar');
+                this.ele.addEventListener('mousemove',this.mousemoveHandler.bind(this));
+                this.ele.addEventListener('mouseout',this.mouseoutHandler.bind(this));
+            };
+
+            Parallax.prototype.mousemoveHandler = function (e) {
+                var ANGLE = 45;
+                var w = this.ele.clientWidth,
+                    h = this.ele.clientHeight,
+                    //3D旋转中rotateX X轴是不动的，所以利用Y轴方向偏移的距离判断X轴旋转多少
+                    y = (e.offsetX - w * 0.5) / w * ANGLE,
+                    x = (1 - (e.offsetY - h * 0.5)) / h * ANGLE;
+
+                this.ele.style.transform = `perspective(300px)
+                                           rotateX(${x}deg)
+                                           rotateY(${y}deg)`;
+                this.ele.style.boxShadow = `${-x/ 20}px ${y / 20}px 50px rgba(0, 0, 0, 0.3)`
+            };
+
+            Parallax.prototype.mouseoutHandler = function () {
+                this.ele.style.transform = `perspective(300px)
+                                           rotateY(0deg)
+                                           rotateX(0deg)`;
+                this.ele.style.boxShadow = '';
+            };
+            win.Parallax = Parallax;
+        })(document,window);
+
+        var parallax = new Parallax({
+            name:'.avator'
+        })
+    </script>
+</body>
+</html>
