@@ -9,3 +9,4 @@
 7. 轮播图 --> carousel-css3
 8. 拖拽 --> drag-js
 9. 视差特效 --> parallax-effect
+10. 加载特效 --> loader-animation

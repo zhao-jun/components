@@ -1,0 +1,113 @@
+html,body {
+    margin:0;
+    padding:0;
+}
+
+.col-xs-3 {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border:1px solid #666;
+    text-align: center;
+    float: left;
+}
+
+/*===========================*/
+
+.rect {
+    background-color: #3c75ff;
+    width: 6px;
+    height: 40px;
+    display: inline-block;
+    vertical-align:middle;
+
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+}
+.rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+@keyframes stretchdelay {
+    /*五等分*/
+    0%,40%,100% {
+        transform: scaleY(1);
+    }
+    20% {
+        transform: scaleY(2.5);
+    }
+}
+
+/*===========================*/
+.spinner1 {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    background-color: #3c75ff;
+
+    animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@keyframes rotateplane{
+    0% {
+        transform: perspective(120px) rotate(0deg);
+    }
+    50% {
+        transform: perspective(120px) rotateX(180deg) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(120px) rotateX(180deg) rotateY(-180deg);
+    }
+}
+
+/*===========================*/
+.spinner2 {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.bounce {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #3c75ff;
+    opacity: 0.6;
+    position: absolute;
+    top:0;
+    left:0;
+
+    animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    animation-delay: -1s;
+}
+
+@keyframes bounce {
+    0% , 100% {
+        transform : scale(0)
+    }
+    50% {
+        transform : scale(1)
+    }
+}
