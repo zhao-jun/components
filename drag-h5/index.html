@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>drag</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img class="img" src="./1.png" alt="picture">
+        <img class="img" src="./2.png" alt="picture">
+        <img class="img" src="./3.png" alt="picture">
+        <img class="img" src="./4.png" alt="picture">
+        <img class="img" src="./5.png" alt="picture">
+    </div>
+    <img class="delete" src="delete.png" alt="delete">
+    <script>
+        // 兼容移动端
+        var iosDragDropShim = { enableEnterLeave: true };
+
+        var oImg = document.querySelectorAll('.img'),
+            oDelete = document.querySelector('.delete'),
+            //存放拖动元素
+            dragElement = null;
+
+        for(var i = 0; i < oImg.length; i++){
+            oImg[i].addEventListener('dragstart',function (e) {
+                dragElement = this;
+                //可以添加其他动画
+                this.style.opacity = .5;
+            });
+            oImg[i].addEventListener('dragend',function (e) {
+                this.style.opacity = 1;
+            });
+            //插到前面
+            oImg[i].addEventListener('dragenter',function (e) {
+                if(dragElement !== this) {
+                    //判断是否是最后一个
+                    if (this === this.parentNode.lastElementChild) {
+                        this.parentNode.appendChild(dragElement);
+                    } else {
+                        this.parentNode.insertBefore(dragElement,this);
+                    }
+                }
+            });
+
+/*            oImg[i].addEventListener('dragleave',function (e) {
+                if(dragElement !== this && lock && this == this.parentNode.lastElementChild ) {
+                    this.parentNode.appendChild(dragElement);
+                }
+            })*/
+        }
+
+        oDelete.addEventListener('drop',function (e) {
+            dragElement.parentNode.removeChild(dragElement);
+        });
+        //阻止默认事件，否则无法删除
+        document.addEventListener('dragover',function (e) {
+            e.preventDefault();
+        })
+    </script>
+    <script src="https://timruffles.github.io/ios-html5-drag-drop-shim/ios-drag-drop.js"></script>
+</body>
+</html>
